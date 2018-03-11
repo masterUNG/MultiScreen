@@ -35,11 +35,23 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="stop" id="0S7-AF-u6M"/>
+                                    <barButtonItem systemItem="stop" id="0S7-AF-u6M">
+                                        <connections>
+                                            <action selector="stopButtonItem:" destination="BYZ-38-t0r" id="Dyu-Ut-wWv"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n9C-pg-8LA"/>
-                                    <barButtonItem systemItem="play" id="yMu-fE-ym8"/>
+                                    <barButtonItem systemItem="play" id="yMu-fE-ym8">
+                                        <connections>
+                                            <action selector="playButtonItem:" destination="BYZ-38-t0r" id="8N7-Ep-bON"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UZ3-5D-beR"/>
-                                    <barButtonItem systemItem="pause" id="HCJ-eV-yJu"/>
+                                    <barButtonItem systemItem="pause" id="HCJ-eV-yJu">
+                                        <connections>
+                                            <action selector="pauseButtonItem:" destination="BYZ-38-t0r" id="AJU-KA-seB"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0R-H8-RNn">
@@ -62,6 +74,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="hl5-LU-fdz"/>
+                    <connections>
+                        <outlet property="numberLabel" destination="E0R-H8-RNn" id="sOa-K1-BJ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,11 +107,23 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="stop" id="GiA-H1-FAX"/>
+                                    <barButtonItem systemItem="stop" id="GiA-H1-FAX">
+                                        <connections>
+                                            <action selector="textStopButton:" destination="jIi-O4-Nkz" id="uVt-ET-s0Y"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yzq-fw-xBx"/>
-                                    <barButtonItem systemItem="play" id="SaP-20-8xn"/>
+                                    <barButtonItem systemItem="play" id="SaP-20-8xn">
+                                        <connections>
+                                            <action selector="textPlayButton:" destination="jIi-O4-Nkz" id="gBC-de-CRZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3pB-B4-QjQ"/>
-                                    <barButtonItem systemItem="pause" id="MGW-yo-sMt"/>
+                                    <barButtonItem systemItem="pause" id="MGW-yo-sMt">
+                                        <connections>
+                                            <action selector="textPauseButton:" destination="jIi-O4-Nkz" id="x0Y-0s-NKk"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-8l-x6N">
@@ -118,6 +145,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XOH-zX-we0"/>
                     </view>
+                    <connections>
+                        <outlet property="textNumberLabel" destination="cJY-8l-x6N" id="VhB-ri-jSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hW8-Jj-poE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

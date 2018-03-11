@@ -9,7 +9,62 @@
 import UIKit
 
 class TextViewController: UIViewController {
+    
+//    Explicit
+    var myClass = MyClass()
+    var textTime = Timer()
+    
+    
+    var textNumberStrings = ["1":"One", "2":"Two", "3":"Three", "4":"Four", "5":"Five", "6":"Six", "7":"Seven", "8":"Eight", "9":"Nine", "10":"Ten"]
+    
+    var numberInt = 1
+    
+    
 
+    
+    
+    
+    @IBOutlet weak var textNumberLabel: UILabel!
+    
+    
+    
+    @IBAction func textPlayButton(_ sender: Any) {
+        
+        myClass.numberAInt = numberInt
+        textTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TextViewController.textRunTime), userInfo: nil, repeats: true)
+        
+    }
+    
+    
+    @IBAction func textPauseButton(_ sender: Any) {
+        textTime.invalidate()
+    }
+    
+    
+    
+    @IBAction func textStopButton(_ sender: Any) {
+        
+        textNumberLabel.text = textNumberStrings["1"]
+        numberInt = 1
+        textTime.invalidate()
+        
+    }
+    
+    @objc func textRunTime() -> Void {
+        
+        if numberInt >= 10 {
+//            pause
+            textTime.invalidate()
+        } else {
+            
+            numberInt = myClass.increaseNumber()
+            textNumberLabel.text = textNumberStrings[String(numberInt)]
+            
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
